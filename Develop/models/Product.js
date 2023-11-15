@@ -41,7 +41,7 @@ Product.init(
         references: {
           model: 'category',
           key: 'id',
-          unique: false
+          unique: false,
         }
       }
   },
@@ -53,5 +53,6 @@ Product.init(
     modelName: 'product',
   }
 );
+
 
 module.exports = Product;

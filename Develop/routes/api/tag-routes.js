@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   // find all tags
   // be sure to include its associated Product data
   try {
-    const Tags = await Location.findAll();
+    const Tags = await Tag.findAll();
     res.status(200).json(Tags);
   } catch (err) {
     res.status(500).json(err);
@@ -47,8 +47,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
   try {
-    const updatedTag = await Tag.update(req.body,
-    {
+    const updatedTag = await Tag.update(req.body, {
       // All the fields you can update and the data attached to the request body.
       where: {
         id: req.params.id,
